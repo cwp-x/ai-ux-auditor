@@ -1,0 +1,177 @@
+/* =========================================
+   layout.css
+   App shell, containers, structural regions,
+   grid systems and responsive layout rules
+   ========================================= */
+
+/* ── App shell ── */
+#app {
+  position: relative;
+  z-index: var(--z-raised);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background decoration layer ── */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-base);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.bg-glow--1 {
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  left: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.13) 0%,
+    transparent 70%
+  );
+}
+
+.bg-glow--2 {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.09) 0%,
+    transparent 70%
+  );
+}
+
+/* ── Main container ── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ── Header layout ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-overlay);
+  padding: var(--space-7) 0 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Page regions ── */
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--space-20);
+}
+
+/* ── Hero region ── */
+.hero {
+  padding-top: var(--space-18);
+  padding-bottom: 0;
+  text-align: center;
+}
+
+/* ── Input region ── */
+.input-region {
+  margin-top: var(--space-10);
+}
+
+/* ── Results region ── */
+.results-region {
+  margin-top: var(--space-14);
+}
+
+/* ── Results grid ── */
+.results-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Footer layout ── */
+.footer {
+  text-align: center;
+  margin-top: var(--space-18);
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-card-border) 0%,
+    transparent 100%
+  );
+}
+
+/* ── Section header row ── */
+.section-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* ── Responsive: tablet ── */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 20px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: var(--space-14);
+  }
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+
+  .header {
+    padding-top: var(--space-5);
+  }
+
+  .hero {
+    padding-top: var(--space-10);
+  }
+
+  .results-region {
+    margin-top: var(--space-10);
+  }
+}
