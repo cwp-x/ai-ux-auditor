@@ -6,10 +6,10 @@
    No UI rendering. No event wiring.
    ========================================= */
 
-import { CONFIG }   from '../../core/config.js';
-import { getState } from '../../core/state.js';
+import { CONFIG }   from '/ai-ux-auditor/src/core/config.js';
+import { getState } from '/ai-ux-auditor/src/core/state.js';
 import { getScoreMeta, getIssueDescription,
-         buildPdfFilename, formatDate } from './reportUtils.js';
+         buildPdfFilename, formatDate } from '/ai-ux-auditor/src/features/report/reportUtils.js';
 
 /* ─────────────────────────────────────────
    generatePDF()
