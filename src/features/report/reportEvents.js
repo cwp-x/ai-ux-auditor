@@ -7,7 +7,7 @@
    ========================================= */
 
 import { CONFIG }       from '../../core/config.js';
-import { generatePDF } from '/ai-ux-auditor/src/features/report/reportPDF.js';
+import { generatePDF } from '/ai-ux-auditor/src/features/report/reportpdf.js';
 
 /* ─────────────────────────────────────────
    initReportEvents()
